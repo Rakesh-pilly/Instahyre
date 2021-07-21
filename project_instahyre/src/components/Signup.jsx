@@ -4,10 +4,17 @@ import { FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { CgChevronDoubleRight } from "react-icons/cg";
 
 const Signupwrapper = styled.div`
-input:focus{
-  outline:none;
-  border:1px solid rgb(5,145,204);
-}
+  @media only screen and (max-width: 900px) {
+    width: 80%;
+    p>* {
+    font-size: 12px;
+  }
+  }
+
+  input:focus {
+    outline: none;
+    border: 1px solid rgb(5, 145, 204);
+  }
   width: 60%;
   margin: auto;
   a {
@@ -23,12 +30,32 @@ input:focus{
   }
 `;
 const Grid = styled.div`
+  @media only screen and (min-width: 900px) {
+       direction:rtl;
+    &>*{
+        direction:ltr;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    * {
+    font-size: 12px;
+  }
+    grid-template-columns: 1fr;
+  }
+
   display: grid;
-  grid-template-columns: 45% 47%;
+  grid-template-columns: 45% 1fr;
   grid-gap: 100px;
+  & > div {
+    min-width: 300px;
+  }
 `;
 
 const Comments = styled.div`
+@media only screen and (max-width: 900px) {
+   border:none;
+  }
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   margin-top: 20px;
   color: rgb(74, 80, 86);
@@ -81,6 +108,9 @@ const Head = styled.div`
     font-size: x-large;
     font-weight: 900;
   }
+  p{
+      font-size:small;
+  }
   margin-bottom: 50px;
 `;
 const Signinoption = styled.div`
@@ -98,16 +128,16 @@ const Signinoption = styled.div`
     background-color: rgb(0, 123, 182);
     border: 1px solid rgb(0, 98, 146);
   }
-  div:nth-child(1):hover{
-    background-color:rgb(0, 98, 146);
-}
+  div:nth-child(1):hover {
+    background-color: rgb(0, 98, 146);
+  }
   div:nth-child(2) {
     background-color: rgb(221, 75, 57);
     border: 1px solid rgb(177, 60, 46);
   }
-  div:nth-child(2):hover{
-    background-color:rgb(177, 60, 46);
-}
+  div:nth-child(2):hover {
+    background-color: rgb(177, 60, 46);
+  }
 `;
 const Or = styled.div`
   display: flex;
@@ -167,8 +197,11 @@ const Signupform = styled.form`
   }
 `;
 const Question = styled.div`
+@media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
   display: grid;
-  grid-template-columns: 48% 48%;
+  grid-template-columns: 48% 1fr;
   grid-gap: 100px;
   div {
     p {
@@ -194,36 +227,6 @@ const Signup = () => {
         </p>
       </Head>
       <Grid>
-        <Comments>
-          <div>
-            <section>
-              <q>
-                Instahyre really stands out from a typical job site by showing
-                relevant positions at top companies!
-              </q>
-            </section>
-          </div>
-          <div>
-            <div>
-              <p>Deepak Kumar</p>
-              <span>Hired at Amazon</span>
-            </div>
-          </div>
-          <div>
-            <section>
-              <q>
-                It was a really cool experience with Instahyre. Very simple
-                without the bugging from irrelevant jobs.
-              </q>
-            </section>
-          </div>
-          <div>
-            <div>
-              <p>Tushar Garg</p>
-              <span>Hired at Paytm</span>
-            </div>
-          </div>
-        </Comments>
         <div>
           <Signinoption>
             <div>
@@ -245,8 +248,8 @@ const Signup = () => {
                   padding: "5px 0px",
                   backgroundColor: "white",
                   color: "black",
-                  borderTopLeftRadius:"3px",
-                  borderBottomLeftRadius:"3px"
+                  borderTopLeftRadius: "3px",
+                  borderBottomLeftRadius: "3px",
                 }}
               />
               Sign in with Google
@@ -289,6 +292,37 @@ const Signup = () => {
             Already have an account? <a href="/">Log in here</a>
           </p>
         </div>
+        <Comments>
+          <div>
+            <section>
+              <q>
+                Instahyre really stands out from a typical job site by showing
+                relevant positions at top companies!
+              </q>
+            </section>
+          </div>
+          <div>
+            <div>
+              <p>Deepak Kumar</p>
+              <span>Hired at Amazon</span>
+            </div>
+          </div>
+          <div>
+            <section>
+              <q>
+                It was a really cool experience with Instahyre. Very simple
+                without the bugging from irrelevant jobs.
+              </q>
+            </section>
+          </div>
+          <div>
+            <div>
+              <p>Tushar Garg</p>
+              <span>Hired at Paytm</span>
+            </div>
+          </div>
+        </Comments>
+       
       </Grid>
       <Question>
         <div>

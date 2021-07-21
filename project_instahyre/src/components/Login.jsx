@@ -4,6 +4,11 @@ import styled from "styled-components";
 import { FaGoogle, FaLinkedinIn } from "react-icons/fa";
 
 const Loginwrapper = styled.div`
+@media only screen and (max-width: 900px) {
+    *{
+    font-size: 12px;
+  }
+  }
 input:focus{
     outline:none;
     border:1px solid rgb(5,145,204);
@@ -20,15 +25,26 @@ input:focus{
     margin-bottom: 10px;
   }
   width: 25%;
+  min-width:300px;
   margin: auto;
 `;
 const Head = styled.div`
+@media only screen and (max-width: 900px) {
+    * {
+    font-size: 12px;
+  }
+  }
   h1 {
     font-size: x-large;
   }
   margin-bottom: 50px;
 `;
 const Signinoption = styled.div`
+@media only screen and (max-width: 900px) {
+    * {
+    font-size: 12px;
+  }
+  }
   color: white;
   div {
     border-radius: 5px;
@@ -53,6 +69,11 @@ const Signinoption = styled.div`
 }
 `;
 const Or = styled.div`
+@media only screen and (max-width: 900px) {
+    * {
+    font-size: 12px;
+  }
+  }
   display: flex;
   div:nth-child(2) {
     width: fit-content;
@@ -64,6 +85,11 @@ const Or = styled.div`
   }
 `;
 const Loginform = styled.form`
+@media only screen and (max-width: 900px) {
+    * {
+    font-size: 12px;
+  }
+  }
   color: rgb(74, 80, 86);
   label {
     display: flex;
