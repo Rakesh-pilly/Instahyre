@@ -1,9 +1,14 @@
 import React from 'react'
-
+import CompanyDisplay from './Home/CompanyDisplay'
+import Index from './Home/Index'
+import Info from './Home/Info'
 const Home = () => {
     return (
         <div>
-            Home Page
+         <Index/>
+         <CompanyDisplay/>
+         <Info/>
+
         </div>
     )
 }
