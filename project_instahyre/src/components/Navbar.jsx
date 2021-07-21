@@ -17,6 +17,7 @@ const Navbar = ({prop}) => {
     </ul>
     <Switch>
               <Route exact path='/' component={prop.Home}></Route>
+              
               <Route exact path='/login' component={prop.Login}></Route>
               <Route exact path='/signup' component={prop.Signup}></Route>
             </Switch>
