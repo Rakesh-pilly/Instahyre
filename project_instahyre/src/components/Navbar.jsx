@@ -19,6 +19,8 @@ const Navbar = ({prop}) => {
               <Route exact path='/' component={prop.Home}></Route>
               <Route exact path='/login' component={prop.Login}></Route>
               <Route exact path='/signup' component={prop.Signup}></Route>
+              <Route exact path='/Customers' component={prop.Customers}></Route>
+              
             </Switch>
         </div>
     )
