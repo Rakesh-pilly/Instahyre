@@ -7,9 +7,10 @@ export default function CompanyDisplay(){
     margin-top: 10px;
     margin-bottom: 32px;
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing:1px;
     color: #40454A;
+    font-weight: 700;
 
     `
     const Images = styled.div`
@@ -59,7 +60,7 @@ export default function CompanyDisplay(){
 
     return (
 
-        <div>
+        <div style = {{padding: '50px 0'}}>
             <H2>More than 10000 top companies</H2>
             <Images></Images>
         

@@ -5,7 +5,7 @@ export default function IndexLogin(props){
 
     const Div = styled.div`
     width: 100vw;
-    height: 475px;
+    height: 500px;
     background-image :linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url("https://static.instahyre.com/images/home/back-image.jpg");
     background-repeat : no-repeat;
     display:grid;
