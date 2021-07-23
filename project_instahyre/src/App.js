@@ -1,17 +1,14 @@
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import {Router, Route, Link, Switch } from "react-router-dom";
+import { createBrowserHistory } from 'history';
 import Navbar from "./components/Navbar";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import Home from "./components/Home";
-
-
 import "./App.css";
 
 function App() {
+  const history = createBrowserHistory();
   return (
-    <Router>
+    <Router history={history}>
       <div className="App">
-        <Navbar prop={{Login,Signup,Home}} />
+        <Navbar  />
       </div>
     </Router>
   );
