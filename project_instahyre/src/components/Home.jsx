@@ -3,6 +3,7 @@ import CompanyDisplay from './Home/CompanyDisplay'
 import Index from './Home/Index'
 import Info from './Home/Info'
 import TestimonialCont from './Home/TestimonialBox/TestimonalCont'
+import Footer from './Footer/Footer'
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
          <TestimonialCont/>
 
 
-
+         <Footer/>
         </div>
     )
 }
