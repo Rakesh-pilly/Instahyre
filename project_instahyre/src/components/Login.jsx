@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import { FaGoogle, FaLinkedinIn } from "react-icons/fa";
+import axios from "axios";
 
 const Loginwrapper = styled.div`
-@media only screen and (max-width: 900px) {
-    *{
-    font-size: 12px;
+  @media only screen and (max-width: 900px) {
+    * {
+      font-size: 12px;
+    }
   }
-  }
-input:focus{
-    outline:none;
-    border:1px solid rgb(5,145,204);
+  input:focus {
+    outline: none;
+    border: 1px solid rgb(5, 145, 204);
   }
   a {
     text-decoration: none;
@@ -25,14 +26,14 @@ input:focus{
     margin-bottom: 10px;
   }
   width: 25%;
-  min-width:300px;
+  min-width: 300px;
   margin: auto;
 `;
 const Head = styled.div`
-@media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 900px) {
     * {
-    font-size: 12px;
-  }
+      font-size: 12px;
+    }
   }
   h1 {
     font-size: x-large;
@@ -40,10 +41,10 @@ const Head = styled.div`
   margin-bottom: 50px;
 `;
 const Signinoption = styled.div`
-@media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 900px) {
     * {
-    font-size: 12px;
-  }
+      font-size: 12px;
+    }
   }
   color: white;
   div {
@@ -57,22 +58,22 @@ const Signinoption = styled.div`
     background-color: rgb(0, 123, 182);
     border: 1px solid rgb(0, 98, 146);
   }
-  div:nth-child(1):hover{
-      background-color:rgb(0, 98, 146);
+  div:nth-child(1):hover {
+    background-color: rgb(0, 98, 146);
   }
   div:nth-child(2) {
     background-color: rgb(221, 75, 57);
     border: 1px solid rgb(177, 60, 46);
   }
-  div:nth-child(2):hover{
-    background-color:rgb(177, 60, 46);
-}
+  div:nth-child(2):hover {
+    background-color: rgb(177, 60, 46);
+  }
 `;
 const Or = styled.div`
-@media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 900px) {
     * {
-    font-size: 12px;
-  }
+      font-size: 12px;
+    }
   }
   display: flex;
   div:nth-child(2) {
@@ -85,10 +86,10 @@ const Or = styled.div`
   }
 `;
 const Loginform = styled.form`
-@media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 900px) {
     * {
-    font-size: 12px;
-  }
+      font-size: 12px;
+    }
   }
   color: rgb(74, 80, 86);
   label {
@@ -96,6 +97,7 @@ const Loginform = styled.form`
     justify-content: flex-start;
   }
   input {
+    text-align: left;
     height: 35px;
     border: 1px solid rgb(204, 204, 204);
     border-radius: 3px;
@@ -113,7 +115,26 @@ const Loginform = styled.form`
   }
 `;
 
-const Login = () => {
+const Login = ({ prop, title }) => {
+  console.log(prop, title);
+  const [login, setLogin] = useState();
+
+  const handleInput = (e) => {
+    setLogin({ ...login, [e.target.name]: e.target.value });
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(" http://localhost:3001/login", login)
+      .then((res) => {
+        localStorage.setItem("login", res.data.user.id );
+        prop(res.data.user.id);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <Loginwrapper>
       <Head>
@@ -142,8 +163,8 @@ const Login = () => {
               padding: "5px 0px",
               backgroundColor: "white",
               color: "black",
-              borderTopLeftRadius:"3px",
-              borderBottomLeftRadius:"3px"
+              borderTopLeftRadius: "3px",
+              borderBottomLeftRadius: "3px",
             }}
           />
           Sign in with Google
@@ -160,10 +181,14 @@ const Login = () => {
       </Or>
       <Loginform>
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" />
+        <input type="email" name="email" onChange={(e) => handleInput(e)} />
         <label htmlFor="password">Password</label>
-        <input type="password" name="password" />
-        <button>Login</button>
+        <input
+          type="password"
+          name="password"
+          onChange={(e) => handleInput(e)}
+        />
+        <button onClick={(e) => handleLogin(e)}>Login</button>
       </Loginform>
       <p>
         <a href="/">Forgot password?</a>
