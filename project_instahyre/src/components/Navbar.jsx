@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import {Route, Link, Switch } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import Navcandidate from "./Navcandidate"
@@ -9,7 +9,7 @@ import Home from "./Home";
 const Navbar = () => {
   const [signup,setSignup] = useState('');
   const [login,setLogin] = useState('');
-  
+  console.log('refreshed')
   const handleSignup = (x) => {
     setSignup(x);
   }
@@ -35,6 +35,7 @@ console.log(l,s)
       <li>
         <Link to="/signup">SignUp</Link>
       </li>
+     
     </ul>
     <Switch>
               <Route exact path='/' component={Home}></Route>

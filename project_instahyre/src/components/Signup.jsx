@@ -4,6 +4,8 @@ import { FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { CgChevronDoubleRight } from "react-icons/cg";
 import { useState } from "react";
 
+
+
 const Signupwrapper = styled.div`
   @media only screen and (max-width: 900px) {
     width: 80%;

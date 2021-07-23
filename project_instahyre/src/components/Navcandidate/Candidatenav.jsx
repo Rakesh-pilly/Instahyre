@@ -1,34 +1,40 @@
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch, withRouter} from "react-router-dom";
+import Opportunities from "../Opportunities/Opportunities";
+import Jobdetail from "../Opportunities/Jobdetail";
 
-
-const Candidatenav = () => {
-
-    const handleSignout = () => {
-        localStorage.removeItem('login');
-        window.location.reload();
+const Candidatenav = withRouter(({history}) => {
+    const handleSignout = (e) => {
+        localStorage.setItem('login','');
+        history.push('/login')
+     window.location.reload()
     }
 
     return (
         <div>
+             
+                
              <ul>
       <li>
         <Link to="/candidate/Opportunities">Instahyre</Link>
       </li>
       <li>
-        <Link to="/candidate/Opportunities">Opportunities</Link>
+        <Link to="/candidate/job">Opportunities</Link>
       </li>
       <li>
-        <button onClick={handleSignout}>SignOut</button>
+        <button onClick={e => handleSignout(e)}>SignOut</button>
       </li>
     </ul>
+    
     <Switch>
-              <Route exact path='/candidate/Opportunities' ></Route>
+    
+              <Route exact path='/candidate/Opportunities' component={Opportunities} ></Route>
               
-              <Route exact path='/candidate/Opportunities' ></Route>
+              <Route exact path='/candidate/job' component={Jobdetail} ></Route>
             </Switch>
+            
         </div>
     )
-}
+})
 
 export default Candidatenav

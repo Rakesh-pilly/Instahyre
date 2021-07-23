@@ -1,4 +1,5 @@
 import Candidatenav from "./Navcandidate/Candidatenav";
+import LoginFrom from "./From/LoginFrom";
 
 const Navcandidate = ({token}) => {
     console.log(token)
@@ -12,10 +13,10 @@ const Navcandidate = ({token}) => {
 
     }
    if(token==='login'){
-       return <Candidatenav/>
+       return <Candidatenav />
    }
    else{
-       return <button onClick={handleForm}>signed up</button>
+       return <LoginFrom prop={handleForm}/>
    }
 }
 

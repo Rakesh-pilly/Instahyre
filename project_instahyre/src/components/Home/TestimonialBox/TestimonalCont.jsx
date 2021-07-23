@@ -5,11 +5,13 @@ import styled from 'styled-components'
 const Comments = styled.div`
 
 
+
   * {
     margin: 0%;
   }
   q{
-      line-height:20px;
+        font-size: 14px;
+      line-height:25px;
   }
 
 
@@ -17,10 +19,13 @@ const Comments = styled.div`
       text-align: center;
     width: 90%;
     display: flex;
-    height: 140px;
+    
     align-items: center;
-    background-color: rgb(244, 243, 236);
-    border-radius: 5px;
+    padding: 5%;
+    background-color: #eeede4;
+    border-radius: 15px;
+    padding-bottom: 30px;
+    
     clip-path: polygon(
       0% 0%,
       100% 0%,
@@ -36,6 +41,8 @@ const Comments = styled.div`
 const Div = styled.div`
 
   display: grid;
+ grid-gap: 5%;
+ margin: 50px 0;
 
 
   
@@ -46,11 +53,15 @@ const Div = styled.div`
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+    grid-template-columns: repeat(2,auto);
+    justify-content:center;
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+    grid-template-columns: repeat(2,345px);
+    justify-content:center;
+
 
 } 
 
@@ -59,32 +70,82 @@ const Div = styled.div`
     grid-template-columns: repeat(2,345px);
     justify-content:center;
 
+
 }
 
 
 
 `
 
+const TestDiv = styled.div`
+display : flex;
+
+img{
+    display: block;
+    width:100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-right:15px;
+}
+align-items: center;
+h3{
+    font-size:15px;
+    margin-bottom: 10px;
+}
+p{
+    font-size: 14px;
+}
+    
+
+`
+
+const Button = styled.button`
+    
+    background-color: #02BFA0;
+    border: 0;
+    border-bottom: 3px solid #029A82;
+    color : white;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    padding: 15px 16px;
+    width: 180px;
+    border-radius: 6px;
+    margin:  auto;
+    display:block;
+
+    :hover{
+        cursor: pointer;
+        background-color: #016153;
+
+    }
+
+`
+
 export default  function TestimonialCont(){
 
     return (
+        <div style = {{paddingBottom:'50px'}}>
 
         <Div>
 <Comments>
           <div>
             <section>
               <q>
-                Instahyre really stands out from a typical job site by showing
-                relevant positions at top companies!
+              "It was a really cool experience with Instahyre. It was very simple and clean without the bugging from job consultants. Keep up the good work guys!"
               </q>
             </section>
           </div>
-          <div>
+          <TestDiv>
+              <div>
+                  <img src = 'https://static.instahyre.com/images/candidates/tushar.jpg' alt = 'proflie'/>
+              </div>
+
+            
             <div>
-              <p>Deepak Kumar</p>
-              <span>Hired at Amazon</span>
+              <h3>Tushar, Hired buy Paytm</h3>
+              <p>as Senior Engineering Mangaer</p>
             </div>
-          </div>
+          </TestDiv>
          
         </Comments>
 
@@ -92,21 +153,35 @@ export default  function TestimonialCont(){
           <div>
             <section>
               <q>
-                Instahyre really stands out from a typical job site by showing
-                relevant positions at top companies!
+              "Little did I know about the reach of Instahyre. They have hundreds of start-ups searching for candidates. I received a good number of offers!"
               </q>
             </section>
           </div>
           <div>
+            <TestDiv>
             <div>
-              <p>Deepak Kumar</p>
-              <span>Hired at Amazon</span>
-            </div>
+                  <img src = 'https://static.instahyre.com/images/candidates/pravesh.jpg' alt = 'proflie'/>
+              </div>
+              <div>
+              <h3>Pravesh, Hired byh Wooplr</h3>
+              <p>as software Developer</p>
+
+              </div>
+            </TestDiv>
           </div>
          
         </Comments>
 
+        
+
            </Div>
+
+<Button> Your Dream Job »</Button>
+
+</div>
+
+
+
     )
 
 }

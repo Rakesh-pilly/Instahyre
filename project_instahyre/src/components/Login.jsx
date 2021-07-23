@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
+import { Redirect } from "react-router-dom";
 import { FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import axios from "axios";
 
@@ -116,7 +116,9 @@ const Loginform = styled.form`
 `;
 
 const Login = ({ prop, title }) => {
-  console.log(prop, title);
+
+
+  const [redirect,setRedirect]  = useState(false);
   const [login, setLogin] = useState();
 
   const handleInput = (e) => {
@@ -130,6 +132,7 @@ const Login = ({ prop, title }) => {
       .post(" http://localhost:3001/login", login)
       .then((res) => {
         localStorage.setItem("login", res.data.user.id );
+        setRedirect(!redirect)
         prop(res.data.user.id);
       })
       .catch((err) => console.log(err));
@@ -137,6 +140,7 @@ const Login = ({ prop, title }) => {
 
   return (
     <Loginwrapper>
+{redirect ? <Redirect to="/candidate/Opportunities" /> : ''}
       <Head>
         <h1>Login</h1>
         <p>
