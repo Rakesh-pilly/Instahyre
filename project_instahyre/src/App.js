@@ -11,6 +11,9 @@ function App() {
         <Navbar  />
       </div>
     </Router>
+
+
+
   );
 }
 

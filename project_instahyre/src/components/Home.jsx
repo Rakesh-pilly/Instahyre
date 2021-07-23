@@ -3,6 +3,8 @@ import CompanyDisplay from './Home/CompanyDisplay'
 import Index from './Home/Index'
 import Info from './Home/Info'
 import TestimonialCont from './Home/TestimonialBox/TestimonalCont'
+
+
 const Home = () => {
     return (
         <div>
@@ -14,6 +16,8 @@ const Home = () => {
          <hr style = {{color: 'lightgray', height:"3px"}}/>
 
          <TestimonialCont/>
+
+
 
         </div>
     )
