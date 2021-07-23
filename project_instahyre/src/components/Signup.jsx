@@ -1,16 +1,17 @@
-import React from "react";
+import axios from "axios";
 import styled from "styled-components";
 import { FaGoogle, FaLinkedinIn } from "react-icons/fa";
 import { CgChevronDoubleRight } from "react-icons/cg";
+import { useState } from "react";
 
 
 
 const Signupwrapper = styled.div`
   @media only screen and (max-width: 900px) {
     width: 80%;
-    p>* {
-    font-size: 12px;
-  }
+    p > * {
+      font-size: 12px;
+    }
   }
 
   input:focus {
@@ -33,16 +34,16 @@ const Signupwrapper = styled.div`
 `;
 const Grid = styled.div`
   @media only screen and (min-width: 900px) {
-       direction:rtl;
-    &>*{
-        direction:ltr;
+    direction: rtl;
+    & > * {
+      direction: ltr;
     }
   }
 
   @media only screen and (max-width: 700px) {
     * {
-    font-size: 12px;
-  }
+      font-size: 12px;
+    }
     grid-template-columns: 1fr;
   }
 
@@ -55,8 +56,8 @@ const Grid = styled.div`
 `;
 
 const Comments = styled.div`
-@media only screen and (max-width: 900px) {
-   border:none;
+  @media only screen and (max-width: 900px) {
+    border: none;
   }
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   margin-top: 20px;
@@ -110,8 +111,8 @@ const Head = styled.div`
     font-size: x-large;
     font-weight: 900;
   }
-  p{
-      font-size:small;
+  p {
+    font-size: small;
   }
   margin-bottom: 50px;
 `;
@@ -159,6 +160,7 @@ const Signupform = styled.form`
     justify-content: flex-start;
   }
   input {
+    text-align: left;
     height: 35px;
     border: 1px solid rgb(204, 204, 204);
     border-radius: 3px;
@@ -199,7 +201,7 @@ const Signupform = styled.form`
   }
 `;
 const Question = styled.div`
-@media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 900px) {
     grid-template-columns: 1fr;
   }
   display: grid;
@@ -219,7 +221,28 @@ const Question = styled.div`
   }
 `;
 
-const Signup = () => {
+const Signup = ({ prop }) => {
+  const [signup, setSignup] = useState();
+  const [status, setStatus] = useState();
+  const [userId, setId] = useState();
+
+  const handleInput = (e) => {
+    setSignup({ ...signup, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(" http://localhost:3001/users", signup)
+      .then((res) => {
+        setStatus(res.status);
+        localStorage.setItem("signup", signup);
+        prop(res.data.user.id);
+      })
+      .catch((error) => console.log(error.response));
+  };
+
   return (
     <Signupwrapper>
       <Head>
@@ -268,11 +291,15 @@ const Signup = () => {
           </Or>
           <Signupform>
             <label htmlFor="name">Your Name</label>
-            <input type="text" name="name" />
+            <input type="text" name="name" onChange={(e) => handleInput(e)} />
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" />
+            <input type="email" name="email" onChange={(e) => handleInput(e)} />
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" />
+            <input
+              type="password"
+              name="password"
+              onChange={(e) => handleInput(e)}
+            />
             <div>
               <input type="checkbox" name="privacy" />
               <label htmlFor="privacy">
@@ -281,7 +308,7 @@ const Signup = () => {
                 email notifications, which I can unsubscribe from at any time.
               </label>
             </div>
-            <button>
+            <button onClick={(e) => handleSubmit(e)}>
               <p>
                 Get Started{" "}
                 <CgChevronDoubleRight
@@ -324,7 +351,6 @@ const Signup = () => {
             </div>
           </div>
         </Comments>
-       
       </Grid>
       <Question>
         <div>
