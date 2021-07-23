@@ -14,12 +14,16 @@ const Navbar = ({prop}) => {
       <li>
         <Link to="/signup">SignUp</Link>
       </li>
+     
     </ul>
     <Switch>
               <Route exact path='/' component={prop.Home}></Route>
               
               <Route exact path='/login' component={prop.Login}></Route>
               <Route exact path='/signup' component={prop.Signup}></Route>
+           
+
+              
             </Switch>
         </div>
     )
