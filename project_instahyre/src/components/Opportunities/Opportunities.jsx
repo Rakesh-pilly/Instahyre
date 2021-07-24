@@ -1,7 +1,24 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import styles from "../Opportunities/Opportunity.module.css"
+import styled from 'styled-components'
+import Popup from './Popup'
+import {GlobalStyle}  from '../../globalStyles'
+import OpportunityViews from './OpportunityViews'
+
+
+
+
+
+
 const Opportunities = () => {
+
+    const [show, setShow] = useState(false);
+
+    const open = ()=>{
+
+        setShow(prev => !prev);
+    }
 
     const [jobs,setJobs] = useState('');
 
@@ -12,7 +29,16 @@ const Opportunities = () => {
     if(jobs){
         return jobs.map((el) => {
             return(
+
+                <div>
+                    <GlobalStyle/>
+                     <Popup show = {show} setShow = {setShow}>
+                         <OpportunityViews jobs = {jobs}/>
+
+                         </Popup>
                 <div className={styles.opp__jobs}>
+                     
+                      
                     <div> 
                         <img className={styles.opp__logo} src={el.logo} alt=""/>
                     </div>
@@ -23,9 +49,22 @@ const Opportunities = () => {
                         <p className={styles.opp__description}>{el.description}</p> 
                      </div>
                      <div className={styles.opp__viewinterested}>
-                       <button> view on  </button>
+                         {/* on click it should pop up a div fiorm opiew */}
+                       <button onClick = {open}> view on  </button>
                        <p> not interested </p>
+
+                       <div>
+                      
+                       
+                       
+                     
+                          
+                       </div>
                       </div>
+
+                     
+                </div>
+
                 </div>
 
             ) 

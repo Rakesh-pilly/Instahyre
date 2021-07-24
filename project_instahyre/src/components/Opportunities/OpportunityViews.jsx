@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import styles from "../Opportunities/Opportunity.module.css"
 
-const OpportunityViews = () => {
+
+const OpportunityViews = ({show}) => {
     const [jobs, setJobs] = useState('');
 
     if (!jobs) {
@@ -13,6 +14,8 @@ const OpportunityViews = () => {
         return jobs.map((el,i) => {
             var { responsibilities,skills, about, location, Function} = el
             return (
+
+                
                 <div className={styles.oppview__box}>
                     <div className={styles.oppview__box2}>
                         <div>
@@ -52,6 +55,7 @@ const OpportunityViews = () => {
                            </div>
                     </div>
                 </div>
+               
 
             )
         })
