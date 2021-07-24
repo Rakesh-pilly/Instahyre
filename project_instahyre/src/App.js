@@ -1,18 +1,21 @@
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import Home from "./components/Home";
-import "./App.css";
-
-function App() {
+// projects
+import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
+import Customers from './components/Customers.js';
+import Navbar from "./components/Navbar"
+export default function App() {
   return (
+
     <Router>
-      <div className="App">
-        <Navbar prop={{Login,Signup,Home}} />
-      </div>
-    </Router>
+    <div className="App">
+      <Navbar prop={{Customers}} />
+    </div>
+  </Router>
+  
   );
 }
 
-export default App;
+
+
+
+
