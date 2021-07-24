@@ -7,7 +7,23 @@ import {GlobalStyle}  from '../../globalStyles'
 import OpportunityViews from './OpportunityViews'
 
 
+const Button = styled.button`
+        background-color: #02BFA0;
+    border: 0;
+    border-bottom: 3px solid #029A82;
+   
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+    padding: 8px 12px;
 
+    :hover{
+        background-color: #19927A;
+    border-color: #007358;
+    cursor: pointer;
+    }
+`
 
 
 
@@ -31,6 +47,7 @@ const Opportunities = () => {
             return(
 
                 <div>
+                     {/* on click it should pop up a div fiorm opiew */}
                     <GlobalStyle/>
                      <Popup show = {show} setShow = {setShow}>
                          <OpportunityViews jobs = {jobs}/>
@@ -49,8 +66,8 @@ const Opportunities = () => {
                         <p className={styles.opp__description}>{el.description}</p> 
                      </div>
                      <div className={styles.opp__viewinterested}>
-                         {/* on click it should pop up a div fiorm opiew */}
-                       <button onClick = {open}> view on  </button>
+                        
+                       <Button onClick = {open}> view on  </Button>
                        <p> not interested </p>
 
                        <div>

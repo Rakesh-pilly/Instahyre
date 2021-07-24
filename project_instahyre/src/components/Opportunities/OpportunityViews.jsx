@@ -3,12 +3,12 @@ import axios from 'axios'
 import styles from "../Opportunities/Opportunity.module.css"
 
 
-const OpportunityViews = ({show}) => {
-    const [jobs, setJobs] = useState('');
+const OpportunityViews = ({jobs}) => {
+    // const [jobs, setJobs] = useState('');
 
-    if (!jobs) {
-        axios.get('http://localhost:3001/jobs').then(res => { console.log(res, 'res'); setJobs(res.data) })
-    }
+    // if (!jobs) {
+    //     axios.get('http://localhost:3001/jobs').then(res => { console.log(res, 'res'); setJobs(res.data) })
+    // }
 
     if (jobs) {
         return jobs.map((el,i) => {
@@ -48,12 +48,14 @@ const OpportunityViews = ({show}) => {
                            <div className={styles.oppview__images}> 
                                 <div>
                                     <img className={styles.opp__logo} src={el.logo} alt=""/>
+                                  
                                 </div>
                                 <div>
                                     <img className={styles.opp__logo} src={el.logo} alt=""/>
                                 </div>
                            </div>
                     </div>
+               
                 </div>
                
 
