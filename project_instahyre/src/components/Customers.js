@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-// import ReactPlayer from "react-player";
+import ReactPlayer from "react-player";
 import React from 'react';
 import CustomersImg from '../modulesCss/Customers.module.css';
 import custlogos from "../Cusimages/log1.png"
@@ -85,20 +85,15 @@ export default function Customers() {
         {/* end navbars */}
 
         {/* react videos */}
-        {/* <div className={CustomersImg.custvideo}>
+        <div className={CustomersImg.custvideo}>
           <ReactPlayer width="189vh" height="40vh" margin="55vh" padding="12vh"
             controls
             url="https://www.youtube.com/watch?v=S6mVwmCHShk" />
       
-        </div> */}
+        </div>
 
         {/* videos */}
-        <div className={CustomersImg.custvideo}>
-
-          <video loop="" muted="" autoplay=""  className={CustomersImg.story_background_vide_block}>
-            <source src="https://static.instahyre.com/images/case-studies/case-studies-bg.webm" type="video/webm" />
-          </video>        
-          </div>
+     
 
         {/*end  react Videos */}
 
