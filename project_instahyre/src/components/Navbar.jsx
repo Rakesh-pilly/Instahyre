@@ -7,6 +7,7 @@ import Home from "./Home";
 
 import OpportunityViews from './Opportunities/OpportunityViews'
 import Opportunities from './Opportunities/Opportunities';
+import Customers from "../components/Opportunities/Customers"
 
 const Navbar = () => {
   const [signup,setSignup] = useState('');
@@ -43,6 +44,9 @@ console.log(l,s)
       <li>
         <Link to="/OpportunityViews">OpportunityViews</Link>
       </li>
+      <li>
+        <Link to="/Customers">Customer</Link>
+      </li>
      
     </ul>
     <Switch>
@@ -51,6 +55,8 @@ console.log(l,s)
               <Route exact path='/signup' render={() => <Signup prop={(x) => handleSignup(x)}  title={`Props through render`} />}></Route>
               <Route exact path='/Opportunities' render={()=><Opportunities prop={x=>handleSignup(x)} title={`props through render`} />}></Route>
               <Route exact path='/OpportunityViews' render={()=><OpportunityViews prop={x=>handleSignup(x)} title={`props through render`} />}></Route>
+              <Route exact path='/Customers' render={()=><Customers prop={x=>handleSignup(x)} title={`props through render`} />}></Route>
+              
             </Switch>
       
         </div>
