@@ -53,18 +53,22 @@ span{
 `;
 
 const Candidatenav = withRouter(({history}) => {
+    let l = localStorage.getItem('login');
+    let s = localStorage.getItem('signup')
     const handleSignout = (e) => {
         localStorage.setItem('login','');
         history.push('/login')
      window.location.reload()
     }
-
+if(history.location.pathname===('/signup' || '/login') && ( l || s)){
+    history.goForward();
+}
     return (
         <div>
           <Space>
           <Navbox>
            <div>
-            <Link to="/candidate/Opportunities"><img src="https://static.instahyre.com/images/logos/logo.png" alt="Instahyre" /></Link>
+            <Link to="/candidate/opportunities"><img src="https://static.instahyre.com/images/logos/logo.png" alt="Instahyre" /></Link>
           </div>
 
                <Navul>
@@ -83,7 +87,7 @@ const Candidatenav = withRouter(({history}) => {
           </Space>
     <Switch>
     
-              <Route exact path='/candidate/Opportunities' component={Opportunities} ></Route>
+              <Route exact path='/candidate/opportunities' component={Opportunities} ></Route>
               
               <Route exact path='/candidate/job' component={Jobdetail} ></Route>
             </Switch>
