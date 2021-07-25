@@ -2,17 +2,20 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import styles from "../Opportunities/Opportunity.module.css"
 
-const OpportunityViews = () => {
-    const [jobs, setJobs] = useState('');
 
-    if (!jobs) {
-        axios.get('http://localhost:3001/jobs').then(res => { console.log(res, 'res'); setJobs(res.data) })
-    }
+const OpportunityViews = ({jobs}) => {
+    // const [jobs, setJobs] = useState('');
+
+    // if (!jobs) {
+    //     axios.get('http://localhost:3001/jobs').then(res => { console.log(res, 'res'); setJobs(res.data) })
+    // }
 
     if (jobs) {
         return jobs.map((el,i) => {
             var { responsibilities,skills, about, location, Function} = el
             return (
+
+                
                 <div className={styles.oppview__box}>
                     <div className={styles.oppview__box2}>
                         <div>
@@ -45,13 +48,16 @@ const OpportunityViews = () => {
                            <div className={styles.oppview__images}> 
                                 <div>
                                     <img className={styles.opp__logo} src={el.logo} alt=""/>
+                                  
                                 </div>
                                 <div>
                                     <img className={styles.opp__logo} src={el.logo} alt=""/>
                                 </div>
                            </div>
                     </div>
+               
                 </div>
+               
 
             )
         })
