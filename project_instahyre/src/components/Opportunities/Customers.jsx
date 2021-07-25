@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player"
 import React from 'react';
 import CustomersImg from '../Opportunities/modulesCss/Customers.module.css';
 import custlogos from "../Opportunities/Cusimages/customers_logos1.png"
@@ -8,7 +8,8 @@ import custlogos from "../Opportunities/Cusimages/customers_logos1.png"
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 // import Footer from "./footer/Footer"
 
-export default function Customers() {
+
+const Customers = () => {
   let images = [
     {
       id: "1",
@@ -77,9 +78,7 @@ export default function Customers() {
 
         
         <div>
-          <h1>
-            <p> hello customers  navbar</p>
-          </h1>
+         
         </div>
 
         {/* end navbars */}
@@ -133,3 +132,6 @@ export default function Customers() {
     </>
   );
 }
+
+export default Customers
+

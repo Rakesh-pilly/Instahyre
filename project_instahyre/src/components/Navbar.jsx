@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch, Router } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import Navcandidate from "./Navcandidate";
+import Customers from "./Opportunities/Customers"
 import Home from "./Home";
 import styled from "styled-components";
 
@@ -81,9 +82,9 @@ const Navbar = () => {
           <Navli>
            INVITE FRIENDS
           </Navli>
-            <Navli>
+          <Link to="/customers"><Navli>
               CUSTOMERS
-            </Navli>
+            </Navli></Link>
             
               <Link to="/login"><Navli>LOGIN</Navli></Link>
             
@@ -98,7 +99,7 @@ const Navbar = () => {
         </Space>
         <Switch>
           <Route exact path="/" component={Home}></Route>
-
+<Route exact path="/customers" component={Customers}></Route>
           <Route
             exact
             path="/login"

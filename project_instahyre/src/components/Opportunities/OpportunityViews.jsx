@@ -11,27 +11,27 @@ const OpportunityViews = ({jobs}) => {
     // }
 
     if (jobs) {
-        return jobs.map((el,i) => {
-            var { responsibilities,skills, about, location, Function} = el
+       
+            var { responsibilities,skills, about, location, functions} = jobs;
             return (
 
                 
                 <div className={styles.oppview__box}>
                     <div className={styles.oppview__box2}>
                         <div>
-                            <img className={styles.opp__logo} src={el.logo} alt="" />
+                            <img className={styles.opp__logo} src={jobs.logo} alt="" />
                         </div>
                         <div>
-                            <h2 className={styles.opp__role}> {el.role} </h2>
-                            <p className={styles.location}> {el.company} </p>
-                            <p className={styles.location}> {el.location} </p>
+                            <h2 className={styles.opp__role}> {jobs.role} </h2>
+                            <p className={styles.location}> {jobs.company} </p>
+                            <p className={styles.location}> {jobs.location} </p>
                         </div>
                     </div>
                     <div>
                         <h1 className={styles.oppview__descriptions}> JOB DESCRIPTION </h1>
                         <p> <span className={styles.oppview__head} > {skills}  </span> </p>
                         <p> <span className={styles.oppview__head}> Location :  {location} </span></p>
-                        <p> <span className={styles.oppview__head}> Function : {Function} </span></p>
+                        <p> <span className={styles.oppview__head}> Function : {functions} </span></p>
                         
                             <h4 className={styles.oppview__descriptions}>Responsiblity</h4>
                         <ul className={styles.opp__ul}>    
@@ -47,11 +47,17 @@ const OpportunityViews = ({jobs}) => {
                            <h1 className={styles.oppview__descriptions}> Infozzle Office and Product Photos </h1>
                            <div className={styles.oppview__images}> 
                                 <div>
-                                    <img className={styles.opp__logo} src={el.logo} alt=""/>
+                                    <img className={styles.opp__logo} src={jobs.images[0]} alt=""/>
                                   
                                 </div>
                                 <div>
-                                    <img className={styles.opp__logo} src={el.logo} alt=""/>
+                                    <img className={styles.opp__logo} src={jobs.images[1]} alt=""/>
+                                </div>
+                                <div>
+                                    <img className={styles.opp__logo} src={jobs.images[2]} alt=""/>
+                                </div>
+                                <div>
+                                    <img className={styles.opp__logo} src={jobs.images[3]} alt=""/>
                                 </div>
                            </div>
                     </div>
@@ -60,7 +66,7 @@ const OpportunityViews = ({jobs}) => {
                
 
             )
-        })
+        
     }
     return <h1>Fetching...</h1>
 

@@ -136,10 +136,12 @@
   .custfooterbody{
     /* margin: -5vw 1vw; */
     /* background-color: black; */
+    position: sticky;
+    top:300px;
     width:104vw;
     display: flex;
     margin: -5vw;
-    border: 1px solid brown;
+    border-top: 1px solid brown;
   }
   .custfooter{
     display: flex;

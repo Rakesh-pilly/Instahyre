@@ -12,7 +12,7 @@ const Button = styled.button`
         background-color: #02BFA0;
     border: 0;
     border-bottom: 3px solid #029A82;
-   
+   width:100px;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
@@ -34,15 +34,18 @@ const Opportunities = () => {
 
   let l = localStorage.getItem("login");
     const [show, setShow] = useState(false);
+const [data,setData] = useState()
 
-    const open = ()=>{
-
-        setShow(prev => !prev);
+    const open = (el)=>{
+        setData(el)
+        setShow(!show);
     }
 
 
   if (!jobs) {
     axios.get(`http://localhost:3001/skills/?userId=${l}`).then((res) => {
+
+    console.log(res)
       axios
         .get(`http://localhost:3001/jobs/?role=${res.data[0].role}`)
         .then((res) => setJobs(res.data));
@@ -51,17 +54,16 @@ const Opportunities = () => {
 
   const handleInterest = (x) => {
     setInterest([...interest,x.id]);
+
+  }
     if(jobs){
-        return jobs.map((el) => {
+        if(!show){
+            return jobs.map((el) => {
             return(
 
                 <div>
                      {/* on click it should pop up a div fiorm opiew */}
-                    <GlobalStyle/>
-                     <Popup show = {show} setShow = {setShow}>
-                         <OpportunityViews jobs = {jobs}/>
-
-                         </Popup>
+                    
                 <div className={styles.opp__jobs}>
                      
                       
@@ -76,8 +78,8 @@ const Opportunities = () => {
                      </div>
                      <div className={styles.opp__viewinterested}>
                         
-                       <Button onClick = {open}> view on  </Button>
-                       <p> not interested </p>
+                       <Button onClick = {() => open(el)}> view on  </Button>
+                       {/* <p onClick={() => handleInterest(el)}> not interested </p> */}
 
                        <div>
                       
@@ -93,31 +95,20 @@ const Opportunities = () => {
 
                 </div>
 
-  }
+            ) 
+        })
+    }
+    else{
+        return <div>
+            <GlobalStyle/>
+                    <Popup show = {show} setShow = {setShow}>
+                         <OpportunityViews jobs = {data}/>
 
-  //  .then(res => console.log(res.data[0].role))
-  if (jobs) {
-    return jobs.map((el) => {
-      return (
-        <div className={styles.opp__jobs}>
-          <div>
-            <img className={styles.opp__logo} src={el.logo} alt="" />
-          </div>
-          <div>
-            <h4 className={styles.opp__role}>{el.role}</h4>
-            <p className={styles.opp__company}>{el.company}</p>
-            <p className={styles.opp__location}>{el.location}</p>
-            <p className={styles.opp__description}>{el.description}</p>
-          </div>
-          <div className={styles.opp__viewinterested}>
-            <button> view on </button>
-            <p onClick={() => handleInterest(el)}> not interested </p>
-          </div>
+                         </Popup>
         </div>
-      );
-    });
-  }
-  return <h1>Fetching...</h1>;
-};
+    }
+    }
+    return <h1>Fetching...</h1>
+}
 
-export default Opportunities;
+export default Opportunities

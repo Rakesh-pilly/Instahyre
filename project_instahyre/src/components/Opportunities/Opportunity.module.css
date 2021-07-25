@@ -1,14 +1,17 @@
 
 .opp__jobs{
     display: flex;
-    padding: 0px 4vw;
-    margin: 0 45vh;
-    border: 1px solid red;
-    border-radius: 1vw;
+    width:70%;
+    padding-inline:1rem;
+    margin: 10px auto;
+    border: 2px solid rgb(228, 228, 228);
+}
+.opp__jobs:hover{
+    border: 2px solid rgb(173, 173, 173);
 }
 .opp__logo{
     width: 8vw;
-    margin: 0vh 5vh;
+    margin: 0vh 2vw;
 }
 .opp__role{
     color: #40454A;
