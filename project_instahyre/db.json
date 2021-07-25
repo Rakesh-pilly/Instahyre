@@ -11,6 +11,24 @@
       "password": "$2a$10$wQHVKEIfcbKIkhcZZdCidOs.QtgJJ.QN/MaDPNhBK/E9BKcH4r2QC",
       "name": "rahul",
       "id": 2
+    },
+    {
+      "email": "milind@gmail.com",
+      "password": "$2a$10$m1qk5k0oyvJHnI.ntFnzquAUPgO9glVDPpaDbqyPvqNzP6cWFVdUe",
+      "name": "milind",
+      "id": 3
+    },
+    {
+      "email": "rakesh@gmail.com",
+      "password": "$2a$10$LP560mB9Txf/8BXtJj.gVOPhmLHEyi0jsnfC5VQmQM7E.kW0tdNMm",
+      "name": "rakesh",
+      "id": 4
+    },
+    {
+      "email": "ramesh@gmail.com",
+      "password": "$2a$10$zLFtIQYjuNkq0inskIafLeDupnjZ5ktKZsKU7PeXLJuXXEkOx3Dli",
+      "name": "ramesh",
+      "id": 5
     }
   ],
   "skills": [
@@ -18,7 +36,7 @@
       "pro": false,
       "fresher": true,
       "userId": "1",
-      "role": "Mobile Development",
+      "role": "Fullstack Development",
       "located": "Delhi",
       "workform": "WorkFromHome",
       "salary": "5",
@@ -39,6 +57,45 @@
       "gender": "male",
       "notinterested": "",
       "id": 2
+    },
+    {
+      "pro": false,
+      "fresher": true,
+      "userId": "3",
+      "role": "Fullstack Development",
+      "located": "Delhi",
+      "workform": "WorkFromHome",
+      "salary": "5",
+      "notice": "Immediately",
+      "gender": "male",
+      "notinterested": "",
+      "id": 3
+    },
+    {
+      "pro": false,
+      "fresher": true,
+      "userId": "4",
+      "role": "Fullstack Development",
+      "located": "Delhi",
+      "workform": "WorkFromHome",
+      "salary": "5",
+      "notice": "Immediately",
+      "gender": "male",
+      "notinterested": "",
+      "id": 4
+    },
+    {
+      "pro": false,
+      "fresher": true,
+      "userId": "5",
+      "role": "Fullstack Development",
+      "located": "Delhi",
+      "workform": "WorkFromHome",
+      "salary": "5",
+      "notice": "Immediately",
+      "gender": "male",
+      "notinterested": "",
+      "id": 5
     }
   ],
   "jobs": [

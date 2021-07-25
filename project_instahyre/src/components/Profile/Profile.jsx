@@ -36,7 +36,7 @@ const handlePut = () => {
                         <option  value = 'Backend Development'>Backend Development</option>
                         <option  value = 'BigData'>Big Data</option>
                         <option  value = 'Frontend Development'>Frontend Development</option>
-                        <option value = 'Full Stack Development'>Full Stack Development</option>
+                        <option value = 'Fullstack Development'>Fullstack Development</option>
                         <option value = 'Mobile Development'>Mobile Development</option>
 
             </select>
