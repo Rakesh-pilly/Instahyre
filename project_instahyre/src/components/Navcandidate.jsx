@@ -1,7 +1,8 @@
 import Candidatenav from "./Navcandidate/Candidatenav";
 import LoginFrom from "./From/LoginFrom";
+import { withRouter } from "react-router-dom";
 
-const Navcandidate = ({token}) => {
+const Navcandidate = withRouter(({token,history}) => {
     console.log(token)
 
     const handleForm = () => {
@@ -10,6 +11,8 @@ const Navcandidate = ({token}) => {
         token[1](localStorage.getItem('login'));
         localStorage.setItem('login',x);
         localStorage.removeItem('signup');
+        history.push('/candidate/opportunities');
+        window.location.reload();
 
     }
    if(token==='login'){
@@ -18,6 +21,6 @@ const Navcandidate = ({token}) => {
    else{
        return <LoginFrom prop={handleForm}/>
    }
-}
+})
 
 export default Navcandidate

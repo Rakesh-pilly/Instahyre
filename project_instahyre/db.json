@@ -2,33 +2,111 @@
   "users": [
     {
       "email": "abhi@gmail.com",
-      "password": "$2a$10$FmWSq.9ZiHcb02ID0SeukOR/zy4GshGrYzfCdef5bJBNVYa8l3f4m",
-      "name": "Abhishek",
+      "password": "$2a$10$Z3CiGRTDqONhKy/uLZ./m.JyUs0siDahXZQk5a9h7v7j.9pgsx52a",
+      "name": "abhi",
       "id": 1
+    },
+    {
+      "email": "rahul@gmail.com",
+      "password": "$2a$10$wQHVKEIfcbKIkhcZZdCidOs.QtgJJ.QN/MaDPNhBK/E9BKcH4r2QC",
+      "name": "rahul",
+      "id": 2
     }
   ],
-  "skills": [],
+  "skills": [
+    {
+      "pro": false,
+      "fresher": true,
+      "userId": "1",
+      "role": "Frontend Development",
+      "located": "Delhi",
+      "workform": "WorkFromHome",
+      "salary": "5",
+      "notice": "Immediately",
+      "gender": "male",
+      "notinterested": "",
+      "id": 1
+    },
+    {
+      "pro": false,
+      "fresher": true,
+      "userId": "2",
+      "role": "Mobile Development",
+      "located": "Delhi",
+      "workform": "WorkFromHome",
+      "salary": "5",
+      "notice": "Immediately",
+      "gender": "male",
+      "notinterested": "",
+      "id": 2
+    }
+  ],
   "jobs": [
     {
-      "role": "Front End Developer",
+      "id": 1,
+      "role": "Frontend Development",
       "company": "DecisionTree Analytics & Services",
-      "logo":"https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/profile/base/employer/18277/f7407262ce/0/02c433381fc5c884d56ab4b5656cf9a7.png",
-      "skills": ["CSS", "HTML", "JavaScript", "React.js"],
+      "logo": "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/profile/base/employer/18277/f7407262ce/0/02c433381fc5c884d56ab4b5656cf9a7.png",
+      "skills": [
+        "CSS",
+        "HTML",
+        "JavaScript",
+        "React.js"
+      ],
       "location": "Gurgaon",
-      "Function": ["Software Engineering", "Frontend Development"],
+      "Function": [
+        "Software Engineering",
+        "Frontend Development"
+      ],
       "description": "DecisionTree is looking for a Front-end developer  Data Channel (http://datachannel.co ).  role will suit someone who has extremely good technical skills but who is also ambitious to play a more strategic role in a growin company and build a strong team.",
       "responsibilities": [
         "As a developer, you will be responsible for designing, developing and enhancing B2B Analytics products, according to the organisation's Product Development plan.",
         "Will be responsible for understanding the requirements from the business teams and taking ownership of front-end application(s).",
         "Analysing user specifications and requirements that reflect business program needs, and subsequently delivering high-quality software solutions that meet those needs."
       ],
-      "about":["Decision Tree is a global provider of advanced analytics and campaign management solutions. We create value for businesses by transforming raw data into scalable and smart insights. We help companies sift through large volumes of data, both on premise and cloud, through data integration and automation, identify patterns using advanced machine learning algorithms and extract sustainable insights that help in accelerating decision-making.",
-      "We combine big data analytics with relevant domain expertise to provide a scalable analytics solution that empower organizations to make smarter and intelligent decisions. Depending upon an organisation needs, we create scalable analytics solutions that enable them to make real-time decisions. Whatever the stage of maturity the organisation is in its analytics journey, we can help, be it for Data Discovery, Descriptive Modelling or Predictive Modelling."],
-      "images":["https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/f70bddacf5/8ebb9329e5473f0c7a42c54f2187e9bf/c54abe0480e353d4486ee6ba502f1625.jpg",
-      "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/fde27029ae/4fc6e05db511390f62dadef3fe8d8602/3f1f657723856fb4068e73793d438d1c.jpg",
-    "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/86eeddabd0/30821527_2044632035776636_4961742585086738016_/50815b1c9cbc9148ccc0d9a7bcab5c19.jpg",
-  "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/a594557f74/82468488_2469935579912944_6947468359898234880_/dfa1ff5d8c2e5c96129fc41b86cf34cc.jpg"]
+      "about": [
+        "Decision Tree is a global provider of advanced analytics and campaign management solutions. We create value for businesses by transforming raw data into scalable and smart insights. We help companies sift through large volumes of data, both on premise and cloud, through data integration and automation, identify patterns using advanced machine learning algorithms and extract sustainable insights that help in accelerating decision-making.",
+        "We combine big data analytics with relevant domain expertise to provide a scalable analytics solution that empower organizations to make smarter and intelligent decisions. Depending upon an organisation needs, we create scalable analytics solutions that enable them to make real-time decisions. Whatever the stage of maturity the organisation is in its analytics journey, we can help, be it for Data Discovery, Descriptive Modelling or Predictive Modelling."
+      ],
+      "images": [
+        "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/f70bddacf5/8ebb9329e5473f0c7a42c54f2187e9bf/c54abe0480e353d4486ee6ba502f1625.jpg",
+        "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/fde27029ae/4fc6e05db511390f62dadef3fe8d8602/3f1f657723856fb4068e73793d438d1c.jpg",
+        "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/86eeddabd0/30821527_2044632035776636_4961742585086738016_/50815b1c9cbc9148ccc0d9a7bcab5c19.jpg",
+        "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/a594557f74/82468488_2469935579912944_6947468359898234880_/dfa1ff5d8c2e5c96129fc41b86cf34cc.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "role": "Mobile Development",
+      "company": "DecisionTree Analytics & Services",
+      "logo": "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/profile/base/employer/18277/f7407262ce/0/02c433381fc5c884d56ab4b5656cf9a7.png",
+      "skills": [
+        "CSS",
+        "HTML",
+        "JavaScript",
+        "React.js"
+      ],
+      "location": "Gurgaon",
+      "Function": [
+        "Software Engineering",
+        "Frontend Development"
+      ],
+      "description": "DecisionTree is looking for a Front-end developer  Data Channel (http://datachannel.co ).  role will suit someone who has extremely good technical skills but who is also ambitious to play a more strategic role in a growin company and build a strong team.",
+      "responsibilities": [
+        "As a developer, you will be responsible for designing, developing and enhancing B2B Analytics products, according to the organisation's Product Development plan.",
+        "Will be responsible for understanding the requirements from the business teams and taking ownership of front-end application(s).",
+        "Analysing user specifications and requirements that reflect business program needs, and subsequently delivering high-quality software solutions that meet those needs."
+      ],
+      "about": [
+        "Decision Tree is a global provider of advanced analytics and campaign management solutions. We create value for businesses by transforming raw data into scalable and smart insights. We help companies sift through large volumes of data, both on premise and cloud, through data integration and automation, identify patterns using advanced machine learning algorithms and extract sustainable insights that help in accelerating decision-making.",
+        "We combine big data analytics with relevant domain expertise to provide a scalable analytics solution that empower organizations to make smarter and intelligent decisions. Depending upon an organisation needs, we create scalable analytics solutions that enable them to make real-time decisions. Whatever the stage of maturity the organisation is in its analytics journey, we can help, be it for Data Discovery, Descriptive Modelling or Predictive Modelling."
+      ],
+      "images": [
+        "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/f70bddacf5/8ebb9329e5473f0c7a42c54f2187e9bf/c54abe0480e353d4486ee6ba502f1625.jpg",
+        "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/fde27029ae/4fc6e05db511390f62dadef3fe8d8602/3f1f657723856fb4068e73793d438d1c.jpg",
+        "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/86eeddabd0/30821527_2044632035776636_4961742585086738016_/50815b1c9cbc9148ccc0d9a7bcab5c19.jpg",
+        "https://instahyre-2.s3-ap-south-1.amazonaws.com/media/CACHE/images/images/office-photos/base/18277/a594557f74/82468488_2469935579912944_6947468359898234880_/dfa1ff5d8c2e5c96129fc41b86cf34cc.jpg"
+      ]
     }
   ]
 }
-  

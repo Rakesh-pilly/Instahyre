@@ -140,7 +140,7 @@ const Login = ({ prop, title }) => {
 
   return (
     <Loginwrapper>
-{redirect ? <Redirect to="/candidate/Opportunities" /> : ''}
+{redirect ? <Redirect to="/candidate/opportunities" /> : ''}
       <Head>
         <h1>Login</h1>
         <p>

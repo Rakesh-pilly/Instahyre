@@ -237,7 +237,7 @@ const Signup = ({ prop }) => {
       .post(" http://localhost:3001/users", signup)
       .then((res) => {
         setStatus(res.status);
-        localStorage.setItem("signup", signup);
+        localStorage.setItem("signup", res.data.user.id);
         prop(res.data.user.id);
       })
       .catch((error) => console.log(error.response));

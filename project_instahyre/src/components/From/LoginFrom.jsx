@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const Div = styled.div`
     min-width:450px;
@@ -84,23 +85,24 @@ const More = styled.h5`
 
 
 
-export default function LoginFrom(){
+export default function LoginFrom({prop}){
 
     const [fresher, setFresher] = useState(false);
     const [pro, setProf ] = useState(true);
     // const [addSkill , setAddSkill] = useState(false);
     const [addMore, setAddmore] = useState(false);
-    const [data, setData] = useState({})
+    const [data, setData] = useState({userId:localStorage.getItem('signup')})
 
     const handleToggle = (e)=>{
        
         setFresher(true)
         setProf(false);
+        setData({pro,fresher,userId:localStorage.getItem('signup')})
     }
     const handleTogglepro = ()=>{
         setFresher(false)
         setProf(true);
-
+        setData({pro,fresher,userId:localStorage.getItem('signup')})
 
     }
     
@@ -111,12 +113,12 @@ export default function LoginFrom(){
 
         const {name,value,checked} = e.target;
 
-        setData({...data, [name]: value === 'checked'? checked: value})
+        setData({...data, [name]: value === 'checked'? checked: value,pro,fresher})
         
     }
+    console.log(data)
      const Submit = ()=>{
-         setData({...data,pro,fresher})
-         console.log(data);
+         axios.post('http://localhost:3001/skills',{...data,notinterested:''}).then(()=> prop())
      }
 
     return(
@@ -155,16 +157,16 @@ export default function LoginFrom(){
                     {pro? 
                         <p>Select your current role:</p>
                     :
-                        <p>Select yopur preferred role:</p>
+                        <p>Select your preferred role:</p>
                         }
 
                     <select name = 'role' onChange = {handelChange} value = {data.role}>
-                        <option  value = 'BackendDevelopment'>BackendDevelopment</option>
+                        <option value="" defaultValue>Select Role...</option>
+                        <option  value = 'Backend Development'>Backend Development</option>
                         <option  value = 'BigData'>Big Data</option>
-                        <option  value = 'FrontendDevelopment'>frontend Development</option>
-                        <option  value = 'FrontendDevelopment'>frontend Development</option>
-                        <option value = 'Full-StackDevelopment'>Full Stack Development</option>
-                        <option value = 'MobileDevelopment'>Mobile Development</option>
+                        <option  value = 'Frontend Development'>Frontend Development</option>
+                        <option value = 'Full Stack Development'>Full Stack Development</option>
+                        <option value = 'Mobile Development'>Mobile Development</option>
                     </select>
                 </div>
 
@@ -238,7 +240,7 @@ export default function LoginFrom(){
                     <p>Where are you currenty located?</p>
 
                     <select value = {data.located} onChange ={handelChange} name = 'located' >
-
+                        <option value="" defaultValue>Select City...</option>
                         <option value ='Bangalore '> Bangalore </option>
                         <option value = 'Hyderabad'> Hyderabad</option>
                         <option value = 'Chennai'> Chennai </option>
@@ -257,6 +259,7 @@ export default function LoginFrom(){
                    <p>Where are you open to working?</p>
 
                    <select name="workform" onChange={handelChange} value = {data.workform}>
+                       <option value="" defaultValue>Select Choice...</option>
                        <option value="WorkFromHome">Work From Home</option>
                        <option value="AnywhereInIndia">Anywhere in India</option>
                        <option value="AnywhereOutsideIndia">Anywhere outside India</option>
@@ -281,6 +284,7 @@ export default function LoginFrom(){
                    {pro? <p>What is your notice period?</p>: <p>When can you join the company if selected? </p>}
 
                    <select name="notice"value = {data.notice} onChange={handelChange}>
+                       <option value="" defaultValue>Select...</option>
                        <option value = 'Immediately'>Immediately</option>
                        <option value = '15Days'>15 Days</option>
                        <option value = '1month'>1 month</option>
@@ -313,6 +317,7 @@ export default function LoginFrom(){
                    <p>Sometimes companies hire for diversity. What's your gender?</p>
 
                   <select name="gender" value={data.gender} onChange={handelChange}>
+                      <option value="" defaultValue>Select Gender...</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                   </select>
