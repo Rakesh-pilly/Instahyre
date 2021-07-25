@@ -1,7 +1,7 @@
 
 import { Route, Link, Switch, withRouter} from "react-router-dom";
 import Opportunities from "../Opportunities/Opportunities";
-import Jobdetail from "../Opportunities/Jobdetail";
+import Profile from "../Profile/Profile";
 import styled from "styled-components";
 
 const Space = styled.div`
@@ -60,15 +60,15 @@ const Candidatenav = withRouter(({history}) => {
         history.push('/login')
      window.location.reload()
     }
-if(history.location.pathname===('/signup' || '/login') && ( l || s)){
-    history.goForward();
-}
+// if(history.location.pathname===('/signup' || '/login') && ( l || s)){
+//     history.goForward();
+// }
     return (
         <div>
           <Space>
           <Navbox>
            <div>
-            <Link to="/candidate/opportunities"><img src="https://static.instahyre.com/images/logos/logo.png" alt="Instahyre" /></Link>
+            <Link to="/"><img src="https://static.instahyre.com/images/logos/logo.png" alt="Instahyre" /></Link>
           </div>
 
                <Navul>
@@ -77,8 +77,8 @@ if(history.location.pathname===('/signup' || '/login') && ( l || s)){
             </Navli>
       <Navli>ACTIVITY</Navli>
       
-        <Link to="/candidate/job"><Navli>OPPORTUNITIES</Navli></Link>
-        <Navli>PROFILE</Navli>
+        <Link to="/candidate/opportunities"><Navli>OPPORTUNITIES</Navli></Link>
+        <Link to="/candidate/profile"><Navli>PROFILE</Navli></Link>
         <Navli>SETTINGS</Navli>
       <Navli onClick={e => handleSignout(e)}>SIGN OUT</Navli>
                </Navul>
@@ -87,9 +87,10 @@ if(history.location.pathname===('/signup' || '/login') && ( l || s)){
           </Space>
     <Switch>
     
-              <Route exact path='/candidate/opportunities' component={Opportunities} ></Route>
+              <Route exact path='/' component={Opportunities} ></Route>
               
-              <Route exact path='/candidate/job' component={Jobdetail} ></Route>
+              <Route exact path='/candidate/opportunities' component={Opportunities} ></Route>
+              <Route exact path='/candidate/profile' component={Profile}></Route>
             </Switch>
             
         </div>
