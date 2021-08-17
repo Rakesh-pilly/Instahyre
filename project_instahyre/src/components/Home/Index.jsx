@@ -1,11 +1,14 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import IndexLogin from './IndexLogin';
 import styled from 'styled-components'
 import LoginLinkedGoogle from './LoginLinkedGoogle'
+import { Redirect } from 'react-router-dom';
 
 
 export default function Index(){
+
+    const [redirect,setRedirect] = useState(false); 
 
     const Wrappper = styled.div`
     width:460px;
@@ -85,7 +88,9 @@ export default function Index(){
 
 
    
-    
+    if(redirect){
+        return <Redirect to="/signup"/>
+    }
 
 
     return (
@@ -97,7 +102,7 @@ export default function Index(){
 
                 <LoginLinkedGoogle/>
 
-                <a href="http://">Or sign up using email »</a>
+                <a onClick={()=>setRedirect(prev=>!prev)}>Or sign up using email »</a>
 
                 <p>Showcase yourself to a curated list of top companies
 

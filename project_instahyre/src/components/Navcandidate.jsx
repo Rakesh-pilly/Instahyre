@@ -3,7 +3,6 @@ import LoginFrom from "./From/LoginFrom";
 import { withRouter } from "react-router-dom";
 
 const Navcandidate = withRouter(({token,history}) => {
-    console.log(token)
 
     const handleForm = () => {
         let x = localStorage.getItem('signup');

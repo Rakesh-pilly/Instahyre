@@ -93,6 +93,7 @@ const Loginform = styled.form`
   }
   color: rgb(74, 80, 86);
   label {
+    width: 90%;
     display: flex;
     justify-content: flex-start;
   }
@@ -118,8 +119,9 @@ const Loginform = styled.form`
 const Login = ({ prop, title }) => {
 
 
+  const [validation,setValidation] = useState(false);
   const [redirect,setRedirect]  = useState(false);
-  const [login, setLogin] = useState();
+  const [login, setLogin] = useState({email:'',password:''});
 
   const handleInput = (e) => {
     setLogin({ ...login, [e.target.name]: e.target.value });
@@ -128,6 +130,15 @@ const Login = ({ prop, title }) => {
   const handleLogin = (e) => {
     e.preventDefault();
 
+    if(login.email==="" ){
+      setValidation('Username or Email cannot be Empty!');
+      return;
+    }
+if( login.password.length<4){
+  setValidation("Password length cannot be less than 4!");
+  return;
+}
+
     axios
       .post(" http://localhost:3001/login", login)
       .then((res) => {
@@ -135,7 +146,7 @@ const Login = ({ prop, title }) => {
         setRedirect(!redirect)
         prop(res.data.user.id);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => setValidation(err.response.data));
   };
 
   return (
@@ -192,6 +203,8 @@ const Login = ({ prop, title }) => {
           name="password"
           onChange={(e) => handleInput(e)}
         />
+        {validation && <div ><label style={{backgroundColor:"#ffab91",color:'#b82606',padding:"5px 1rem",fontSize:"smaller",borderRadius:"5px"}}>{validation}</label></div>}
+           
         <button onClick={(e) => handleLogin(e)}>Login</button>
       </Loginform>
       <p>

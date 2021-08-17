@@ -116,7 +116,7 @@ export default function LoginFrom({prop}){
         setData({...data, [name]: value === 'checked'? checked: value,pro,fresher})
         
     }
-    console.log(data)
+    
      const Submit = ()=>{
          axios.post('http://localhost:3001/skills',{...data,notinterested:''}).then(()=> prop())
      }

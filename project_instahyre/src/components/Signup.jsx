@@ -222,9 +222,11 @@ const Question = styled.div`
 `;
 
 const Signup = ({ prop }) => {
-  const [signup, setSignup] = useState();
+  const [signup, setSignup] = useState({name:'',email:'',password:''});
   const [status, setStatus] = useState();
   const [userId, setId] = useState();
+  const [validation,setValidation] = useState(false);
+  const [tnc,setTnC] = useState(false);
 
   const handleInput = (e) => {
     setSignup({ ...signup, [e.target.name]: e.target.value });
@@ -233,6 +235,18 @@ const Signup = ({ prop }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if(signup.name==="" || signup.email==="" ){
+      setValidation('Username or Email cannot be Empty!');
+      return;
+    }
+if( signup.password.length<4){
+  setValidation("Password length cannot be less than 4!");
+  return;
+}
+if(!tnc){
+  setValidation('Please accept terms & conditions of service!');
+  return;
+}
     axios
       .post(" http://localhost:3001/users", signup)
       .then((res) => {
@@ -240,7 +254,7 @@ const Signup = ({ prop }) => {
         localStorage.setItem("signup", res.data.user.id);
         prop(res.data.user.id);
       })
-      .catch((error) => console.log(error.response));
+      .catch((error) => setValidation(error.response.data));
   };
 
   return (
@@ -300,8 +314,9 @@ const Signup = ({ prop }) => {
               name="password"
               onChange={(e) => handleInput(e)}
             />
+            {validation && <div ><label style={{backgroundColor:"#ffab91",color:'#b82606',padding:"5px 1rem",borderRadius:"5px"}}>{validation}</label></div>}
             <div>
-              <input type="checkbox" name="privacy" />
+              <input type="checkbox" name="privacy" onChange={e=>setTnC(prev=>!prev)}/>
               <label htmlFor="privacy">
                 I agree to the <a href="/">Terms of Service</a> and{" "}
                 <a href="/">Privacy Policy</a>. I agree to receive the default

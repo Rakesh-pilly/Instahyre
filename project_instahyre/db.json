@@ -2,33 +2,9 @@
   "users": [
     {
       "email": "abhi@gmail.com",
-      "password": "$2a$10$Z3CiGRTDqONhKy/uLZ./m.JyUs0siDahXZQk5a9h7v7j.9pgsx52a",
-      "name": "abhi",
+      "password": "$2a$10$K05zOnL83/Ip.T9GxQgZGuQL0NU/OYVMJu8oRQ6.PAUOBurcG6jOm",
+      "name": "abhi singh",
       "id": 1
-    },
-    {
-      "email": "rahul@gmail.com",
-      "password": "$2a$10$wQHVKEIfcbKIkhcZZdCidOs.QtgJJ.QN/MaDPNhBK/E9BKcH4r2QC",
-      "name": "rahul",
-      "id": 2
-    },
-    {
-      "email": "milind@gmail.com",
-      "password": "$2a$10$m1qk5k0oyvJHnI.ntFnzquAUPgO9glVDPpaDbqyPvqNzP6cWFVdUe",
-      "name": "milind",
-      "id": 3
-    },
-    {
-      "email": "rakesh@gmail.com",
-      "password": "$2a$10$LP560mB9Txf/8BXtJj.gVOPhmLHEyi0jsnfC5VQmQM7E.kW0tdNMm",
-      "name": "rakesh",
-      "id": 4
-    },
-    {
-      "email": "ramesh@gmail.com",
-      "password": "$2a$10$zLFtIQYjuNkq0inskIafLeDupnjZ5ktKZsKU7PeXLJuXXEkOx3Dli",
-      "name": "ramesh",
-      "id": 5
     }
   ],
   "skills": [
@@ -36,66 +12,9 @@
       "pro": false,
       "fresher": true,
       "userId": "1",
-      "role": "Fullstack Development",
-      "located": "Delhi",
-      "workform": "WorkFromHome",
-      "salary": "5",
-      "notice": "Immediately",
-      "gender": "male",
+      "role": "Frontend Development",
       "notinterested": "",
       "id": 1
-    },
-    {
-      "pro": false,
-      "fresher": true,
-      "userId": "2",
-      "role": "Fullstack Development",
-      "located": "Delhi",
-      "workform": "WorkFromHome",
-      "salary": "5",
-      "notice": "Immediately",
-      "gender": "male",
-      "notinterested": "",
-      "id": 2
-    },
-    {
-      "pro": false,
-      "fresher": true,
-      "userId": "3",
-      "role": "Fullstack Development",
-      "located": "Delhi",
-      "workform": "WorkFromHome",
-      "salary": "5",
-      "notice": "Immediately",
-      "gender": "male",
-      "notinterested": "",
-      "id": 3
-    },
-    {
-      "pro": false,
-      "fresher": true,
-      "userId": "4",
-      "role": "Fullstack Development",
-      "located": "Delhi",
-      "workform": "WorkFromHome",
-      "salary": "5",
-      "notice": "Immediately",
-      "gender": "male",
-      "notinterested": "",
-      "id": 4
-    },
-    {
-      "pro": false,
-      "fresher": true,
-      "userId": "5",
-      "role": "Fullstack Development",
-      "located": "Delhi",
-      "workform": "WorkFromHome",
-      "salary": "5",
-      "notice": "Immediately",
-      "gender": "male",
-      "notinterested": "",
-      "id": 5
     }
   ],
   "jobs": [

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Link, Switch, Router } from "react-router-dom";
+import { Route, Link, Switch} from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import Navcandidate from "./Navcandidate";
@@ -58,7 +58,7 @@ span{
 const Navbar = () => {
   const [signup, setSignup] = useState("");
   const [login, setLogin] = useState("");
-  console.log("refreshed");
+  
   const handleSignup = (x) => {
     setSignup(x);
   };

@@ -45,7 +45,7 @@ const [data,setData] = useState()
   if (!jobs) {
     axios.get(`http://localhost:3001/skills/?userId=${l}`).then((res) => {
 
-    console.log(res)
+    
       axios
         .get(`http://localhost:3001/jobs/?role=${res.data[0].role}`)
         .then((res) => setJobs(res.data));
@@ -58,10 +58,10 @@ const [data,setData] = useState()
   }
     if(jobs){
         if(!show){
-            return jobs.map((el) => {
+            return jobs.map((el,i) => {
             return(
 
-                <div>
+                <div key={i}>
                      {/* on click it should pop up a div fiorm opiew */}
                     
                 <div className={styles.opp__jobs}>
