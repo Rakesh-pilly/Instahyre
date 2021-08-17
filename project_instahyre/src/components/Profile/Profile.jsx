@@ -33,8 +33,7 @@ const handlePut = () => {
             <select name="role" ref={roleRef} onChange={(e) => handleChange(e)} id="">
 
             <option value="" defaultValue>Select Role...</option>
-                        <option  value = 'Backend Development'>Backend Development</option>
-                        <option  value = 'BigData'>Big Data</option>
+            
                         <option  value = 'Frontend Development'>Frontend Development</option>
                         <option value = 'Fullstack Development'>Fullstack Development</option>
                         <option value = 'Mobile Development'>Mobile Development</option>
